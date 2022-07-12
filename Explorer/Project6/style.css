@@ -12,6 +12,7 @@
   --bg--primary: hsl(var(--hue), 22%, 20%);
   --fc--primary: hsl(var(--hue), 0%, 100%);
   --fc--secondary: hsl(var(--hue), 50%, 80%);
+  --fc-secondary-dark: hsla(var(--hue), 100%, 11%,1);
 
   font-size: 62.5%;
   --fs-body:1.6rem;
@@ -61,3 +62,99 @@ header h1{
   line-height: 4.8rem;
 }
 
+.cards{
+  position: relative;
+  font-family: var(--ff-heading);
+}
+
+.cards img{
+  height: 41.6rem;
+  object-fit: cover; /*var "encaixar o mouse dentro da ".cards" sendo essa uma div*/
+
+  border-radius: 6px;
+
+  transition: all 200ms; /*all -> vai adicionar a opacidade e tamanho na transfotmação*/
+}
+
+.cards img:hover{
+  transform: scale(1.1);/*vai aumentar o tamanho ao passar o mouse*/
+  opacity: 0.4;
+}
+
+.cards h2{
+  z-index: 1;
+  position: absolute;
+
+  bottom: 5.2rem;
+  left: 2.8rem;
+
+  font-size: var(--fs-heading);
+  font-weight: 800;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+}
+
+.cards h2 span{
+  border-radius: 2rem;
+  background-color: var(--fc--primary);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: var(--fc-secondary-dark);
+
+  padding: 0 1.6rem;
+  height: 3.8rem;
+  display: inline-flex; /*foi utilizado para poder definir o heigth, e para destravar o "align-itens" para centralizar*/
+  align-items: center;
+
+  width: fit-content; /*vai fazer com que o tamanho não siga o romanho total da caixa e sim o tamanho original*/
+}
+
+main{
+  display: grid;
+  gap: 3.2rem;
+
+  /*animation: downtop 700ms reverse backwards; /*backwords -> faz com que o elemento tenha as propriedades iniciais da aimação*/
+  animation: downtop 700ms forwards;
+}
+
+header{
+  animation: topdown 700ms;
+
+  /*animation-duration: 700ms;*/
+  /*animation-fill-mode: forwards; /*vai fazer com que o elemento termine com com as propriedades do 100% e n com suas propriedades oroginais*/
+  /*animation-direction: reverse; /*a animação vai começar do 100% ate 0%*/
+  /*animation-iteration-count: infinite; /*a animação será infinita*/
+  /*animation-play-state: paused; /*a animação ficara pausada ate haver um enento que despause utilizando o "running" */
+}
+
+/*header:hover{
+  animation-play-state: running; /*vai fazer com que a animação despause ao passar o mouse}
+*/
+
+/*tudo que tiver um "@" é uma "hetrow"*/
+
+@keyframes topdown{
+  0%{
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop{
+  0%{
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
