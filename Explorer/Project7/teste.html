@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    section{
+      max-width: 900px;
+      padding: 20px;
+      background-color: gray;
+      margin: 0 auto;
+
+      display: grid;
+      grid-template-areas: "A A B"
+      "C D D";
+      gap: 20px;
+    }
+
+
+    .div1{
+      grid-area: A;
+      background-color: red;
+    }
+
+    .div2{
+      grid-area: B;
+      background-color: blue;
+    }
+
+    .div3{
+      grid-area: C;
+      background-color: green;
+    }
+
+    .div4{
+      grid-area: D;
+      background-color: yellow;
+    }
+
+    img{
+      width: 100%;
+      height: 300px;
+
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  
+  <section>
+    <div class="div1">
+      <img src="images/colher-sorvete.jpg" alt="">
+    </div>
+    <div class="div2">
+      <img src="images/picole.jpg" alt="">
+    </div>
+    <div class="div3">
+      <img src="images/picole2.jfif" alt="">
+    </div>
+    <div class="div4">
+      <img src="images/sorvete.jpg" alt="">
+    </div>
+  </section>
+
+</body>
+</html>
